@@ -1,7 +1,8 @@
-package com.example.spaceapp
+package com.example.spaceapp.framework.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.spaceapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
