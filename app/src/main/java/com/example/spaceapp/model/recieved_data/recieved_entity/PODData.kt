@@ -2,7 +2,7 @@ package com.example.spaceapp.model.recieved_data.recieved_entity
 
 import com.google.gson.annotations.SerializedName
 
-data class PictureOfTheDay(
+data class PODData(
     @field:SerializedName("copyright") val copyright: String?,
     @field:SerializedName("date") val date: String?,
     @field:SerializedName("explanation") val explanation: String?,
