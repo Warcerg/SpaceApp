@@ -8,13 +8,13 @@ class RepositoryImpl: Repository {
     override fun getPictureOfTheDayFromServer(): POD {
         val dto = PictureOfTheDayDataRepo.API.getPictureOfTheDay(ApiUtils.apiKey).execute().body()
         return POD(
-            copyright = dto?.copyright,
-            date = dto?.date,
-            explanation = dto?.date,
-            mediaType = dto?.mediaType,
-            title = dto?.title,
-            url = dto?.title,
-            hdurl = dto?.hdurl
+            copyright = dto?.copyright ?: "",
+            date = dto?.date ?: "",
+            explanation = dto?.explanation ?: "",
+            mediaType = dto?.mediaType ?: "",
+            title = dto?.title ?: "",
+            url = dto?.url ?: "",
+            hdurl = dto?.hdurl ?: ""
         )
     }
 }

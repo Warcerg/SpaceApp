@@ -1,7 +1,6 @@
 package com.example.spaceapp.model.recieved_data
 
 import okhttp3.Interceptor
-import spaceapp.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.io.IOException
