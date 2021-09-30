@@ -4,4 +4,9 @@
     <string name="photo_of_the_day">Photo of the day</string>
     <string name="error">Error</string>
     <string name="loading">Loading</string>
+    <string name="uranus">Uranus</string>
+    <string name="mars">Mars</string>
+    <string name="europa">Europa</string>
+    <string name="theme">Theme</string>
+    <string name="settings">Settings</string>
 </resources>

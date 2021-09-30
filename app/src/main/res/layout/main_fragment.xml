@@ -26,7 +26,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text" />
+
     </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:drawableTop="@drawable/ic_baseline_settings_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout" />
 
     <com.example.spaceapp.framework.util.EquilateralImageView
         android:id="@+id/image_pod"
@@ -38,10 +48,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_layout"
-        app:layout_constraintVertical_bias="0.04"
-         />
-
+        app:layout_constraintTop_toBottomOf="@id/settingsButton"
+        app:layout_constraintVertical_bias="0.04" />
 
     <TextView
         android:id="@+id/pod_description"

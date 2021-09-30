@@ -16,8 +16,8 @@ import com.google.android.material.snackbar.Snackbar
 import org.koin.android.ext.android.bind
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.text.method.ScrollingMovementMethod
-
-
+import com.example.spaceapp.databinding.SettingsFragmentBinding
+import com.example.spaceapp.framework.ui.settings.SettingsFragment
 
 
 class MainFragment: Fragment() {
@@ -37,6 +37,7 @@ class MainFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initSettingsButton()
         with(binding){
             inputLayout.setEndIconOnClickListener {
                 startActivity(Intent(Intent.ACTION_VIEW).apply {
@@ -45,6 +46,22 @@ class MainFragment: Fragment() {
             }
             viewModel.getLiveData().observe(viewLifecycleOwner, { loadData(it)})
             viewModel.getPODData()
+
+        }
+    }
+
+    private fun initSettingsButton() {
+        with(binding){
+            settingsButton.setOnClickListener { view ->
+                val managerFR = activity?.supportFragmentManager
+                managerFR?.let{ manager ->
+                    manager.beginTransaction()
+                        .add(R.id.container, SettingsFragment.newInstance())
+                        .addToBackStack("")
+                        .remove(this@MainFragment)
+                        .commitAllowingStateLoss()
+                }
+            }
         }
     }
 

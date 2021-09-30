@@ -16,7 +16,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="@string/settings"
             android:textStyle="bold"
             android:textSize="34sp"
             android:paddingTop="15dp"
@@ -27,7 +27,7 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Theme"
+            android:text="@string/theme"
             android:paddingStart="15dp"
             android:textSize="24sp"
             />
@@ -40,31 +40,31 @@
             android:layout_marginBottom="5dp">
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chipTheme1"
+                android:id="@+id/chipThemeEuropa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="theme 1"
+                android:text="@string/europa"
                 android:textAlignment="center"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chipTheme2"
+                android:id="@+id/chipThemeMars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="theme 1"
+                android:text="@string/mars"
                 android:textAlignment="center"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chipTheme3"
+                android:id="@+id/chipThemeUranus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="theme 1"
+                android:text="@string/uranus"
                 android:textAlignment="center"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"/>
@@ -102,11 +102,12 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="#DDDDDD">
+                android:background="@color/settings_example_color">
 
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/outlinedButton"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -127,6 +128,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/unelevatedButton"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -137,6 +139,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/textButton"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -190,25 +193,21 @@
                     app:layout_constraintTop_toBottomOf="@id/filledBoxTextField">
 
                     <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tab1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tab 1" />
 
                     <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tab2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tab 2" />
 
                     <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tab3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tab 3" />
 
                     <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tab4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tab 4" />

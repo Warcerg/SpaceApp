@@ -1,16 +1,127 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SpaceApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.SpaceApp" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">?attr/themeColorPrimary</item>
+        <item name="colorPrimaryVariant">?attr/themeColorPrimaryVariant</item>
+        <item name="colorOnPrimary">?attr/themeColorOnPrimary</item>
+        <item name="colorSecondary">?attr/themeColorSecondary</item>
+        <item name="colorSecondaryVariant">?attr/themeColorSecondaryVariant</item>
+        <item name="colorOnSecondary">?attr/themeColorOnSecondary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/themeColorAndroidStatusBarColor</item>
+        <item name="colorError">?attr/themeColorError</item>
+        <item name="colorOnError">?attr/themeColorOnError</item>
+        <item name="android:colorBackground">?attr/themeColorBackground</item>
+        <item name="colorOnBackground">?attr/themeColorOnBackground</item>
+        <item name="colorSurface">?attr/themeColorSurface</item>
+        <item name="colorOnSurface">?attr/themeColorOnSurface</item>
+        <item name="android:textColorPrimary">?attr/themeColorTextPrimary</item>
+        <item name="android:textColorSecondary">?attr/themeColorTextSecondary</item>
+        <item name="materialCardViewStyle">@style/AppCard</item>
+
     </style>
+
+    <style name="AppCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">12dp</item>
+    </style>
+    
+    <style name="Theme.SpaceApp.Europa">
+        <item name="themeColorPrimary">@color/europa_color_primary</item>
+        <item name="themeColorPrimaryVariant">@color/europa_color_primary_variant</item>
+        <item name="themeColorOnPrimary">@color/europa_color_on_primary</item>
+        <item name="themeColorSecondary">@color/europa_color_secondary</item>
+        <item name="themeColorSecondaryVariant">@color/europa_color_secondary_variant</item>
+        <item name="themeColorOnSecondary">@color/europa_color_on_secondary</item>
+        <item name="themeColorAndroidStatusBarColor">@color/europa_color_status_bar</item>
+        <item name="themeColorError">@color/europa_color_error</item>
+        <item name="themeColorOnError">@color/europa_color_on_error</item>
+        <item name="themeColorSurface">@color/europa_color_surface</item>
+        <item name="themeColorOnSurface">@color/europa_color_on_surface</item>
+        <item name="themeColorBackground">@color/europa_color_background</item>
+        <item name="themeColorOnBackground">@color/europa_color_on_background</item>
+        <item name="themeColorTextPrimary">@color/europa_primary_text_color</item>
+        <item name="themeColorTextSecondary">@color/europa_secondary_text_color</item>
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.EuropaSmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.EuropaMediumComponent</item>
+        <item name="materialButtonStyle">@style/AppButton.Europa</item>
+    </style>
+
+    <style name="AppShapeAppearance.EuropaSmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="AppShapeAppearance.EuropaMediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="AppButton.Europa" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?attr/colorPrimaryVariant</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="strokeWidth">3dp</item>
+    </style>
+
+
+    <style name="Theme.SpaceApp.Mars">
+        <item name="themeColorPrimary">@color/mars_color_primary</item>
+        <item name="themeColorPrimaryVariant">@color/mars_color_primary_variant</item>
+        <item name="themeColorOnPrimary">@color/mars_color_on_primary</item>
+        <item name="themeColorSecondary">@color/europa_color_secondary</item>
+        <item name="themeColorSecondaryVariant">@color/mars_color_secondary_variant</item>
+        <item name="themeColorOnSecondary">@color/mars_color_on_secondary</item>
+        <item name="themeColorAndroidStatusBarColor">@color/mars_color_status_bar</item>
+        <item name="themeColorError">@color/mars_color_error</item>
+        <item name="themeColorOnError">@color/mars_color_on_error</item>
+        <item name="themeColorSurface">@color/mars_color_surface</item>
+        <item name="themeColorOnSurface">@color/mars_color_on_surface</item>
+        <item name="themeColorBackground">@color/mars_color_background</item>
+        <item name="themeColorOnBackground">@color/mars_color_on_background</item>
+        <item name="themeColorTextPrimary">@color/mars_primary_text_color</item>
+        <item name="themeColorTextSecondary">@color/mars_secondary_text_color</item>
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.MarsSmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.MarsMediumComponent</item>
+
+    </style>
+
+    <style name="AppShapeAppearance.MarsSmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <style name="AppShapeAppearance.MarsMediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+
+    <style name="Theme.SpaceApp.Uranus">
+        <item name="themeColorPrimary">@color/uranus_color_primary</item>
+        <item name="themeColorPrimaryVariant">@color/uranus_color_primary_variant</item>
+        <item name="themeColorOnPrimary">@color/uranus_color_on_primary</item>
+        <item name="themeColorSecondary">@color/uranus_color_secondary</item>
+        <item name="themeColorSecondaryVariant">@color/uranus_color_secondary_variant</item>
+        <item name="themeColorOnSecondary">@color/uranus_color_on_secondary</item>
+        <item name="themeColorAndroidStatusBarColor">@color/uranus_color_status_bar</item>
+        <item name="themeColorError">@color/uranus_color_error</item>
+        <item name="themeColorOnError">@color/uranus_color_on_error</item>
+        <item name="themeColorSurface">@color/uranus_color_surface</item>
+        <item name="themeColorOnSurface">@color/uranus_color_on_surface</item>
+        <item name="themeColorBackground">@color/uranus_color_background</item>
+        <item name="themeColorOnBackground">@color/uranus_color_on_background</item>
+        <item name="themeColorTextPrimary">@color/uranus_primary_text_color</item>
+        <item name="themeColorTextSecondary">@color/uranus_secondary_text_color</item>
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.UranusSmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.UranusMediumComponent</item>
+    </style>
+
+    <style name="AppShapeAppearance.UranusSmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+    </style>
+
+    <style name="AppShapeAppearance.UranusMediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">26dp</item>
+    </style>
+
 </resources>
