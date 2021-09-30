@@ -46,8 +46,8 @@
                 android:layout_weight="1"
                 android:text="@string/europa"
                 android:textAlignment="center"
-                android:layout_marginStart="@dimen/settings_chip_margin_start"
-                android:layout_marginEnd="@dimen/settings_layout_margin_end"/>
+                android:layout_marginStart="@dimen/settings_chip_margin"
+                android:layout_marginEnd="@dimen/settings_chip_margin"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipThemeMars"
@@ -56,8 +56,8 @@
                 android:layout_weight="1"
                 android:text="@string/mars"
                 android:textAlignment="center"
-                android:layout_marginStart="@dimen/settings_chip_margin_start"
-                android:layout_marginEnd="@dimen/settings_layout_margin_end"/>
+                android:layout_marginStart="@dimen/settings_chip_margin"
+                android:layout_marginEnd="@dimen/settings_chip_margin"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipThemeUranus"
@@ -66,8 +66,8 @@
                 android:layout_weight="1"
                 android:text="@string/uranus"
                 android:textAlignment="center"
-                android:layout_marginStart="@dimen/settings_chip_margin_start"
-                android:layout_marginEnd="@dimen/settings_layout_margin_end"/>
+                android:layout_marginStart="@dimen/settings_chip_margin"
+                android:layout_marginEnd="@dimen/settings_chip_margin"/>
 
         </LinearLayout>
 
@@ -238,10 +238,10 @@
                     android:id="@+id/card"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/settings_card_view_height"
-                    android:layout_marginStart="@dimen/settings_card_view_margin_start"
-                    android:layout_marginTop="@dimen/settings_card_view_margin_top"
-                    android:layout_marginEnd="@dimen/settings_card_view_margin_end"
-                    android:layout_marginBottom="@dimen/settings_card_view_margin_bottom"
+                    android:layout_marginStart="@dimen/settings_card_view_margin"
+                    android:layout_marginTop="@dimen/settings_card_view_margin"
+                    android:layout_marginEnd="@dimen/settings_card_view_margin"
+                    android:layout_marginBottom="@dimen/settings_card_view_margin"
                     android:paddingBottom="@dimen/settings_card_view_padding_bottom"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

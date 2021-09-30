@@ -8,8 +8,7 @@
     <dimen name="theme_heading_text_size">24sp</dimen>
     <dimen name="settings_layout_margin_top">5dp</dimen>
     <dimen name="settings_layout_margin_bottom">5dp</dimen>
-    <dimen name="settings_chip_margin_start">5dp</dimen>
-    <dimen name="settings_layout_margin_end">5dp</dimen>
+    <dimen name="settings_chip_margin">5dp</dimen>
     <dimen name="settings_layout_text_view_margin_top">15dp</dimen>
     <dimen name="settings_layout_text_view_margin_bottom">15dp</dimen>
     <dimen name="theme_example_textview_padding_end">35dp</dimen>
@@ -28,9 +27,6 @@
     <dimen name="settings_radio_button_margin_start">16dp</dimen>
     <dimen name="settings_radio_button_margin_top">16dp</dimen>
     <dimen name="settings_card_view_height">120dp</dimen>
-    <dimen name="settings_card_view_margin_start">16dp</dimen>
-    <dimen name="settings_card_view_margin_top">16dp</dimen>
-    <dimen name="settings_card_view_margin_end">16dp</dimen>
-    <dimen name="settings_card_view_margin_bottom">16dp</dimen>
+    <dimen name="settings_card_view_margin">16dp</dimen>
     <dimen name="settings_card_view_padding_bottom">25dp</dimen>
 </resources>
