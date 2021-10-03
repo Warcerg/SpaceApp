@@ -1,8 +1,8 @@
 package com.example.spaceapp.framework.ui
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.spaceapp.R
 import com.example.spaceapp.framework.ui.earth.EarthFragment
@@ -11,9 +11,6 @@ import com.example.spaceapp.framework.ui.mars.MarsFragment
 import com.example.spaceapp.framework.ui.settings.SettingsFragment
 import com.example.spaceapp.model.entities.AppThemes
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.google.android.material.bottomnavigation.LabelVisibilityMode.LABEL_VISIBILITY_SELECTED
-import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -96,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun openFragment(fragment: Fragment) {
         supportFragmentManager.apply {
-            getSupportFragmentManager().findFragmentById(R.id.container)?.let {
+            supportFragmentManager.findFragmentById(R.id.container)?.let {
                 beginTransaction()
                     .add(R.id.container, fragment)
                     .addToBackStack("")

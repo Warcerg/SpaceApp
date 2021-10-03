@@ -28,4 +28,9 @@
     <string name="APOD">APOD</string>
     <string name="earth">Earth</string>
     <string name="Mars">Mars</string>
+    <string name="bottom_nav_view_APOD_tooltip">Astronomy Picture of the Day</string>
+    <string name="earth_photo_of_the_day">Earth Photo of the day</string>
+    <string name="mars_rover_s_photo_of_the_day">Mars Rover\'s Photo of the Day</string>
+    <string name="mars_heading">Mars Photo of the Day</string>
+    <string name="mars_photo_date">Date of the  Photo: </string>
 </resources>

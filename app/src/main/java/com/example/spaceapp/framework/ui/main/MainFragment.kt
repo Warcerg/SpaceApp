@@ -12,12 +12,8 @@ import coil.api.load
 import com.example.spaceapp.R
 import com.example.spaceapp.databinding.MainFragmentBinding
 import com.example.spaceapp.model.AppState
-import com.google.android.material.snackbar.Snackbar
-import org.koin.android.ext.android.bind
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.text.method.ScrollingMovementMethod
-import com.example.spaceapp.databinding.SettingsFragmentBinding
-import com.example.spaceapp.framework.ui.settings.SettingsFragment
 
 
 class MainFragment: Fragment() {
@@ -54,7 +50,7 @@ class MainFragment: Fragment() {
             is AppState.Loading -> {
                 Toast.makeText(context, getString(R.string.loading), Toast.LENGTH_SHORT).show()
             }
-            is AppState.Success -> {
+            is AppState.SuccessPOD -> {
                 imagePod.load(appState.pictureOfTheDayData.url)
                 podDescription.text = appState.pictureOfTheDayData.explanation
                 podDescription.movementMethod = ScrollingMovementMethod()

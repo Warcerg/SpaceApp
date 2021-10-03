@@ -1,14 +1,16 @@
 package com.example.spaceapp.model.recieved_data
 
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 
 object ApiUtils {
-    val baseUrl = "https://api.nasa.gov/"
+    const val baseUrl = "https://api.nasa.gov/"
+
+    const val epicArchiveUrl = "EPIC/archive/natural/"
+    const val pngArchiveUrl = "/png/"
+    const val pngUrl = ".png?api_key="
 
    const val apiKey = "MhOwqoXjH6miEF4JCCa57ahHbT9zrPtusRvtVmPk"
 

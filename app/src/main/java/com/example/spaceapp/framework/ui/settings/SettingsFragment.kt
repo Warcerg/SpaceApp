@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.spaceapp.R
-import com.example.spaceapp.databinding.MainFragmentBinding
 import com.example.spaceapp.databinding.SettingsFragmentBinding
 import com.example.spaceapp.model.entities.AppThemes
 

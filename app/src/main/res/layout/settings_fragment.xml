@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:text="@string/settings"
             android:textStyle="bold"
-            android:textSize="@dimen/settings_main_heading_text_size"
-            android:paddingTop="@dimen/setting_main_heading_padding_top"
-            android:paddingBottom="@dimen/setting_main_heading_padding_bottom"
-            android:paddingStart="@dimen/setting_main_heading_padding_start"/>
+            android:textSize="@dimen/main_heading_text_size"
+            android:paddingTop="@dimen/main_heading_padding_top"
+            android:paddingBottom="@dimen/main_heading_padding_bottom"
+            android:paddingStart="@dimen/main_heading_padding_start"/>
 
         <TextView
             android:id="@+id/textView2"

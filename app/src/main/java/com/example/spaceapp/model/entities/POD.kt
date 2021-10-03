@@ -1,7 +1,5 @@
 package com.example.spaceapp.model.entities
 
-import com.google.gson.annotations.SerializedName
-
 data class POD(
     val copyright: String,
     val date: String,
