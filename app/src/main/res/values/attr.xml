@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="themeColorPrimary" format="reference"/>
+    <attr name="themeColorPrimaryVariant" format="reference"/>
+    <attr name="themeColorOnPrimary" format="reference"/>
+    <attr name="themeColorSecondary" format="reference"/>
+    <attr name="themeColorSecondaryVariant" format="reference"/>
+    <attr name="themeColorOnSecondary" format="reference"/>
+    <attr name="themeColorAndroidStatusBarColor" format="reference"/>
+    <attr name="themeColorError" format="reference"/>
+    <attr name="themeColorOnError" format="reference"/>
+    <attr name="themeColorSurface" format="reference"/>
+    <attr name="themeColorOnSurface" format="reference"/>
+    <attr name="themeColorBackground" format="reference"/>
+    <attr name="themeColorOnBackground" format="reference"/>
+    <attr name="themeColorTextPrimary" format="reference"/>
+    <attr name="themeColorTextSecondary" format="reference"/>
+
+
+</resources>
