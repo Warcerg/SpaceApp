@@ -25,4 +25,7 @@
     <string name="switchButton">Switch</string>
     <string name="radio_button">Radio Button</string>
     <string name="cardview">CardView</string>
+    <string name="APOD">APOD</string>
+    <string name="earth">Earth</string>
+    <string name="Mars">Mars</string>
 </resources>

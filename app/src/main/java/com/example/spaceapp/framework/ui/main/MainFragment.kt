@@ -37,7 +37,6 @@ class MainFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initSettingsButton()
         with(binding){
             inputLayout.setEndIconOnClickListener {
                 startActivity(Intent(Intent.ACTION_VIEW).apply {
@@ -50,25 +49,10 @@ class MainFragment: Fragment() {
         }
     }
 
-    private fun initSettingsButton() {
-        with(binding){
-            settingsButton.setOnClickListener { view ->
-                val managerFR = activity?.supportFragmentManager
-                managerFR?.let{ manager ->
-                    manager.beginTransaction()
-                        .add(R.id.container, SettingsFragment.newInstance())
-                        .addToBackStack("")
-                        .remove(this@MainFragment)
-                        .commitAllowingStateLoss()
-                }
-            }
-        }
-    }
-
     private fun loadData(appState: AppState) = with(binding) {
         when (appState) {
             is AppState.Loading -> {
-                Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, getString(R.string.loading), Toast.LENGTH_SHORT).show()
             }
             is AppState.Success -> {
                 imagePod.load(appState.pictureOfTheDayData.url)
