@@ -32,4 +32,5 @@
     <dimen name="wiki_button_padding_end">8dp</dimen>
     <dimen name="wiki_button_padding_bottom">16dp</dimen>
     <dimen name="pod_description_margin">15dp</dimen>
+    <dimen name="settings_chip_width">80dp</dimen>
 </resources>

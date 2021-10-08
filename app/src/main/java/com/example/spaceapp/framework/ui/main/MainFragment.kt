@@ -53,7 +53,6 @@ class MainFragment: Fragment() {
             is AppState.SuccessPOD -> {
                 imagePod.load(appState.pictureOfTheDayData.url)
                 podDescription.text = appState.pictureOfTheDayData.explanation
-       /*         podDescription.movementMethod = ScrollingMovementMethod()*/
             }
             is AppState.Error -> {
                 Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()
