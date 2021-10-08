@@ -10,16 +10,16 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import coil.api.load
 import com.example.spaceapp.R
-import com.example.spaceapp.databinding.MainFragmentBinding
 import com.example.spaceapp.model.AppState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.text.method.ScrollingMovementMethod
+import com.example.spaceapp.databinding.MainFragmentStartBinding
 
 
 class MainFragment: Fragment() {
     private val viewModel: MainViewModel by viewModel()
 
-    private var _binding: MainFragmentBinding? = null
+    private var _binding: MainFragmentStartBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -27,7 +27,7 @@ class MainFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = MainFragmentBinding.inflate(inflater, container, false)
+        _binding = MainFragmentStartBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -53,7 +53,7 @@ class MainFragment: Fragment() {
             is AppState.SuccessPOD -> {
                 imagePod.load(appState.pictureOfTheDayData.url)
                 podDescription.text = appState.pictureOfTheDayData.explanation
-                podDescription.movementMethod = ScrollingMovementMethod()
+       /*         podDescription.movementMethod = ScrollingMovementMethod()*/
             }
             is AppState.Error -> {
                 Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()
