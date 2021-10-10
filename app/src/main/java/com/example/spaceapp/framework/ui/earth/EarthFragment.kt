@@ -4,8 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import coil.api.load
 import com.example.spaceapp.R
 import com.example.spaceapp.databinding.EarthFragmentBinding
@@ -21,6 +26,8 @@ class EarthFragment: Fragment() {
     private val binding get() = _binding!!
     private lateinit var dateString : String
 
+    private var isExpanded = false
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,8 +40,28 @@ class EarthFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initDate()
+        initImageViewExpander()
         viewModel.getLiveData().observe(viewLifecycleOwner, { loadData(it)})
         viewModel.getEarthPhotoData(dateString)
+    }
+
+    private fun initImageViewExpander() {
+        with(binding) {
+            imageEarth.setOnClickListener {
+                isExpanded = !isExpanded
+
+                val set = TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+
+                TransitionManager.beginDelayedTransition(constraintLayout, set)
+                imageEarth.scaleType = if (isExpanded) {
+                    ImageView.ScaleType.CENTER_CROP
+                } else {
+                    ImageView.ScaleType.FIT_CENTER
+                }
+            }
+        }
     }
 
     private fun loadData(appState: AppState) = with(binding) {

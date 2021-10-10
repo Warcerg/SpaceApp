@@ -54,6 +54,35 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.chip.Chip
+                android:id="@+id/day_before_yesterday_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/the_day_before_yesterday"
+                app:layout_constraintTop_toBottomOf="@id/input_layout"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/yesterday_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yesterday"
+                app:layout_constraintTop_toBottomOf="@id/input_layout"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/today_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today"
+                app:layout_constraintTop_toBottomOf="@id/input_layout"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/chip_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="yesterday_chip, day_before_yesterday_chip,today_chip"/>
+
+
             <com.example.spaceapp.framework.util.EquilateralImageView
                 android:id="@+id/image_pod"
                 android:layout_width="match_parent"
@@ -62,7 +91,7 @@
                 android:contentDescription="@string/photo_of_the_day"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/input_layout"
+                app:layout_constraintTop_toBottomOf="@id/chip_barrier"
                 app:srcCompat="@drawable/ic_no_image" />
 
             <TextView

@@ -13,6 +13,11 @@ import com.example.spaceapp.R
 import com.example.spaceapp.model.AppState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.text.method.ScrollingMovementMethod
+import android.widget.ImageView
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import com.example.spaceapp.databinding.MainFragmentStartBinding
 
 
@@ -21,6 +26,8 @@ class MainFragment: Fragment() {
 
     private var _binding: MainFragmentStartBinding? = null
     private val binding get() = _binding!!
+
+    private var isExpanded = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +40,7 @@ class MainFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initImageViewExpander()
         with(binding){
             inputLayout.setEndIconOnClickListener {
                 startActivity(Intent(Intent.ACTION_VIEW).apply {
@@ -42,6 +50,25 @@ class MainFragment: Fragment() {
             viewModel.getLiveData().observe(viewLifecycleOwner, { loadData(it)})
             viewModel.getPODData()
 
+        }
+    }
+
+    private fun initImageViewExpander() {
+        with(binding) {
+            imagePod.setOnClickListener {
+                isExpanded = !isExpanded
+
+                val set = TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+
+                TransitionManager.beginDelayedTransition(main, set)
+                imagePod.scaleType = if (isExpanded) {
+                    ImageView.ScaleType.CENTER_CROP
+                } else {
+                    ImageView.ScaleType.FIT_CENTER
+                }
+            }
         }
     }
 

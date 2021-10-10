@@ -5,14 +5,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import coil.api.load
 import com.example.spaceapp.R
 import com.example.spaceapp.databinding.MarsFragmentBinding
 import com.example.spaceapp.getCurrentDateTime
 import com.example.spaceapp.model.AppState
 import com.example.spaceapp.toString
+import org.koin.android.ext.android.bind
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MarsFragment: Fragment() {
@@ -23,6 +29,8 @@ class MarsFragment: Fragment() {
     private lateinit var dateString : String
     private lateinit var dayString: String
     private var photoId = 0
+
+    private var isExpanded = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,9 +45,29 @@ class MarsFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initDate()
         initHeaderElevation()
+        initImageViewExpander()
         viewModel.getLiveData().observe(viewLifecycleOwner, { loadData(it)})
         viewModel.getMarsPhotoData(dateString)
 
+    }
+
+    private fun initImageViewExpander() {
+        with(binding) {
+            imageMars.setOnClickListener {
+                isExpanded = !isExpanded
+
+                val set = TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+
+                TransitionManager.beginDelayedTransition(scrollView, set)
+                imageMars.scaleType = if (isExpanded) {
+                    ImageView.ScaleType.CENTER_CROP
+                } else {
+                    ImageView.ScaleType.FIT_CENTER
+                }
+            }
+        }
     }
 
     private fun initHeaderElevation() {
