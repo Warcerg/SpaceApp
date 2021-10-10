@@ -2,10 +2,16 @@ package com.example.spaceapp.framework.ui.settings
 
 import android.content.Context
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.transition.Fade
+import androidx.transition.Slide
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import com.example.spaceapp.databinding.SettingsFragmentBinding
 import com.example.spaceapp.model.entities.AppThemes
 
@@ -14,6 +20,9 @@ class SettingsFragment: Fragment() {
     private var _binding: SettingsFragmentBinding? = null
     private val binding get() = _binding!!
     private var currentTheme: String = ""
+
+    private var cardVisible = true
+    private var filledBoxTextVisible = true
 
 
     override fun onCreateView(
@@ -29,6 +38,30 @@ class SettingsFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initDataTheme()
         initThemeChips()
+        initMotions()
+    }
+
+    private fun initMotions() {
+        with(binding){
+            outlinedButton.setOnClickListener {
+                TransitionManager.beginDelayedTransition(constraintLayout, Slide(Gravity.END))
+                cardVisible = !cardVisible
+                card.visibility = if (cardVisible) View.VISIBLE else View.GONE
+            }
+
+            raisedButton.setOnClickListener {
+                val fade = Fade().addTarget(filledBoxTextField)
+                fade.duration = 2000
+                val setTransition = TransitionSet().addTransition(fade)
+                TransitionManager.beginDelayedTransition(constraintLayout, setTransition)
+                filledBoxTextVisible = !filledBoxTextVisible
+                filledBoxTextField.visibility = if (filledBoxTextVisible) View.VISIBLE else View.GONE
+
+            }
+
+
+
+        }
     }
 
     private fun initDataTheme() {

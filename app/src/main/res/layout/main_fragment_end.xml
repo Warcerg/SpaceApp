@@ -77,7 +77,8 @@
                 android:text="@string/today"
                 android:textAlignment="center"
                 app:layout_constraintTop_toBottomOf="@id/input_layout"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/yesterday_chip"
@@ -85,8 +86,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/yesterday"
                 android:textAlignment="center"
-                app:layout_constraintTop_toBottomOf="@id/today_chip"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toEndOf="@id/today_chip"
+                app:layout_constraintTop_toBottomOf="@id/input_layout"
+                app:layout_constraintEnd_toStartOf="@id/day_before_yesterday_chip"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/day_before_yesterday_chip"
@@ -94,8 +96,8 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:text="@string/the_day_before_yesterday"
-                app:layout_constraintTop_toBottomOf="@id/yesterday_chip"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintTop_toBottomOf="@id/input_layout"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <androidx.constraintlayout.widget.Barrier
                 android:id="@+id/chip_barrier"
@@ -129,6 +131,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image_pod"
                 />
+
 
         </androidx.constraintlayout.motion.widget.MotionLayout>
 

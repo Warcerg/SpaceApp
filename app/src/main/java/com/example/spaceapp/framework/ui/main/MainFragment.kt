@@ -13,11 +13,9 @@ import com.example.spaceapp.R
 import com.example.spaceapp.model.AppState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.text.method.ScrollingMovementMethod
+import android.view.Gravity
 import android.widget.ImageView
-import androidx.transition.ChangeBounds
-import androidx.transition.ChangeImageTransform
-import androidx.transition.TransitionManager
-import androidx.transition.TransitionSet
+import androidx.transition.*
 import com.example.spaceapp.databinding.MainFragmentStartBinding
 import com.example.spaceapp.getDayBeforeYesterdayDateTime
 import com.example.spaceapp.getYesterdayDateTime
@@ -86,8 +84,11 @@ class MainFragment: Fragment() {
 
     private fun initChips() {
         with(binding){
+
+
             todayChip.setOnClickListener {
                 viewModel.getPODData()
+
             }
             yesterdayChip.setOnClickListener {
                 viewModel.getSpecificPODData(yesterdayDate)

@@ -55,6 +55,11 @@ class EarthFragment: Fragment() {
                     .addTransition(ChangeImageTransform())
 
                 TransitionManager.beginDelayedTransition(constraintLayout, set)
+                imageEarth.layoutParams.height = if (isExpanded) {
+                    ViewGroup.LayoutParams.MATCH_PARENT
+                } else {
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                }
                 imageEarth.scaleType = if (isExpanded) {
                     ImageView.ScaleType.CENTER_CROP
                 } else {

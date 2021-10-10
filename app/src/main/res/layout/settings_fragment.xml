@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -53,6 +54,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/settings_heading" />
 
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/heading_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="settings_heading, theme_heading"/>
+
+
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipThemeEuropa"
@@ -66,7 +75,7 @@
             app:layout_constraintBottom_toBottomOf="@id/theme_horizontal_guideline"
             app:layout_constraintStart_toStartOf="@id/theme_start_vertical_guideline"
             app:layout_constraintEnd_toEndOf="@id/theme_start_vertical_guideline"
-            app:layout_constraintTop_toTopOf="@id/theme_horizontal_guideline"
+            app:layout_constraintTop_toTopOf="@id/heading_barrier"
             app:layout_constraintVertical_chainStyle="spread_inside" />
 
         <com.google.android.material.chip.Chip
@@ -81,7 +90,7 @@
             app:layout_constraintBottom_toBottomOf="@id/theme_horizontal_guideline"
             app:layout_constraintEnd_toStartOf="@id/chipThemeUranus"
             app:layout_constraintStart_toEndOf="@id/chipThemeEuropa"
-            app:layout_constraintTop_toTopOf="@id/theme_horizontal_guideline" />
+            app:layout_constraintTop_toTopOf="@id/heading_barrier" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chipThemeUranus"
@@ -94,7 +103,7 @@
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="@id/theme_horizontal_guideline"
             app:layout_constraintEnd_toEndOf="@id/theme_end_vertical_guideline"
-            app:layout_constraintTop_toTopOf="@id/theme_horizontal_guideline"
+            app:layout_constraintTop_toTopOf="@id/heading_barrier"
             app:layout_constraintStart_toStartOf="@id/theme_end_vertical_guideline"/>
 
         <androidx.constraintlayout.widget.Barrier
@@ -235,7 +244,7 @@
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/filledBoxTextField">
+            app:layout_constraintTop_toBottomOf="@id/outlinedBoxTextField">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -286,8 +295,8 @@
             android:layout_marginStart="@dimen/settings_card_view_margin"
             android:layout_marginTop="@dimen/settings_card_view_margin"
             android:layout_marginEnd="@dimen/settings_card_view_margin"
-            android:layout_marginBottom="@dimen/settings_card_view_margin"
             android:paddingBottom="@dimen/settings_card_view_padding_bottom"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/radioButton">
