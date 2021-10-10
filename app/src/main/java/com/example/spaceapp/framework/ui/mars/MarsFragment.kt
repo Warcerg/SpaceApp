@@ -1,5 +1,6 @@
 package com.example.spaceapp.framework.ui.mars
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,9 +36,20 @@ class MarsFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
         initDate()
+        initHeaderElevation()
         viewModel.getLiveData().observe(viewLifecycleOwner, { loadData(it)})
         viewModel.getMarsPhotoData(dateString)
 
+    }
+
+    private fun initHeaderElevation() {
+        with(binding){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                scrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+                    header.isSelected = scrollView.canScrollVertically(-1)
+                }
+            }
+        }
     }
 
     private fun loadData(appState: AppState) = with(binding) {
