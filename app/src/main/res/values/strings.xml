@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">SpaceApp</string>
+    <string name="pod_description">POD Description</string>
+    <string name="photo_of_the_day">Photo of the day</string>
+    <string name="error">Error</string>
+    <string name="loading">Loading</string>
+    <string name="uranus">Uranus</string>
+    <string name="mars">Mars</string>
+    <string name="europa">Europa</string>
+    <string name="theme">Theme</string>
+    <string name="settings">Settings</string>
+    <string name="theme_example">Theme Example:</string>
+    <string name="outlined_button">Outlined Button</string>
+    <string name="raised_button">Raised Button</string>
+    <string name="unelevated_button">Unelevated Button</string>
+    <string name="text_button">Text Button</string>
+    <string name="outlined_box_text_field_example">Outlined Box Text Field Example</string>
+    <string name="some_text">Some text</string>
+    <string name="filled_box_text_field">Filled Box Text Field</string>
+    <string name="some_other_text">Some other text</string>
+    <string name="tab_1">Tab 1</string>
+    <string name="tab_2">Tab 2</string>
+    <string name="tab_3">Tab 3</string>
+    <string name="tab_4">Tab 4</string>
+    <string name="switchButton">Switch</string>
+    <string name="radio_button">Radio Button</string>
+    <string name="cardview">CardView</string>
 </resources>
