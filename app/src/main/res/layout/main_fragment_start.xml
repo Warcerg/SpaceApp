@@ -53,7 +53,7 @@
                 app:endIconCheckable="true"
                 app:endIconDrawable="@drawable/ic_wiki"
                 app:endIconMode="custom"
-                app:layout_constraintBottom_toTopOf="@id/image_pod"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintVertical_chainStyle="packed"
                 android:visibility="invisible">

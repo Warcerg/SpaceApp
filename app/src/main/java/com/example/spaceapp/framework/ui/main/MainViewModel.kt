@@ -18,5 +18,11 @@ class MainViewModel(private val repository: Repository) : ViewModel(), Lifecycle
         }.start()
     }
 
+    fun getSpecificPODData(date: String) {
+        liveDataToObserve.value = AppState.Loading
+        Thread {
+            liveDataToObserve.postValue(AppState.SuccessPOD(repository.getSpecificPictureOfTheDayFromServer(date)))
+        }.start()
+    }
 
 }

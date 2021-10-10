@@ -17,3 +17,9 @@ fun getYesterdayDateTime(): Date {
     calendar.add(Calendar.DAY_OF_YEAR, -1)
     return calendar.time
 }
+
+fun getDayBeforeYesterdayDateTime(): Date {
+    val calendar = Calendar.getInstance()
+    calendar.add(Calendar.DAY_OF_YEAR, -2)
+    return calendar.time
+}

@@ -19,6 +19,9 @@ import androidx.transition.ChangeImageTransform
 import androidx.transition.TransitionManager
 import androidx.transition.TransitionSet
 import com.example.spaceapp.databinding.MainFragmentStartBinding
+import com.example.spaceapp.getDayBeforeYesterdayDateTime
+import com.example.spaceapp.getYesterdayDateTime
+import com.example.spaceapp.toString
 
 
 class MainFragment: Fragment() {
@@ -28,6 +31,9 @@ class MainFragment: Fragment() {
     private val binding get() = _binding!!
 
     private var isExpanded = false
+
+    private lateinit var yesterdayDate : String
+    private lateinit var dayBeforeYesterdayDate : String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,6 +46,7 @@ class MainFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initDate()
         initImageViewExpander()
         with(binding){
             inputLayout.setEndIconOnClickListener {
@@ -49,8 +56,13 @@ class MainFragment: Fragment() {
             }
             viewModel.getLiveData().observe(viewLifecycleOwner, { loadData(it)})
             viewModel.getPODData()
-
         }
+        initChips()
+    }
+
+    private fun initDate() {
+        yesterdayDate = getYesterdayDateTime().toString("yyyy-MM-dd")
+        dayBeforeYesterdayDate = getDayBeforeYesterdayDateTime().toString("yyyy-MM-dd")
     }
 
     private fun initImageViewExpander() {
@@ -68,6 +80,20 @@ class MainFragment: Fragment() {
                 } else {
                     ImageView.ScaleType.FIT_CENTER
                 }
+            }
+        }
+    }
+
+    private fun initChips() {
+        with(binding){
+            todayChip.setOnClickListener {
+                viewModel.getPODData()
+            }
+            yesterdayChip.setOnClickListener {
+                viewModel.getSpecificPODData(yesterdayDate)
+            }
+            dayBeforeYesterdayChip.setOnClickListener {
+                viewModel.getSpecificPODData(dayBeforeYesterdayDate)
             }
         }
     }

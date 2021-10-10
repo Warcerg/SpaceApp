@@ -5,6 +5,7 @@ import com.example.spaceapp.model.entities.MarsPhoto
 import com.example.spaceapp.model.entities.POD
 
 interface Repository {
+    fun getSpecificPictureOfTheDayFromServer(date:String): POD
     fun getPictureOfTheDayFromServer(): POD
     fun getMarsPictureFromServer(date:String): List<MarsPhoto>
     fun getEarthPictureFromServer(date:String): EarthPhoto

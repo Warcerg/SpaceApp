@@ -13,6 +13,12 @@ interface PictureOfTheDayDataAPI {
     @GET("planetary/apod")
     fun getPictureOfTheDay(@Query("api_key") apiKey: String): Call<PODData>
 
+    @GET("planetary/apod")
+    fun getSpecificPictureOfTheDay(
+        @Query("date") earthDate:String,
+        @Query("api_key") apiKey: String
+    ): Call<PODData>
+
     @GET("mars-photos/api/v1/rovers/curiosity/photos")
     fun getMarsSetOfPictures(
         @Query("earth_date") earthDate:String,
