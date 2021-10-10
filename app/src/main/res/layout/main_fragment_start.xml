@@ -31,6 +31,17 @@
                 app:layout_constraintTop_toTopOf="@id/input_layout"
                 app:srcCompat="@drawable/ic_wiki" />
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/shrink_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/wiki_button_padding_end"
+                android:paddingBottom="@dimen/wiki_button_padding_bottom"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/input_layout"
+                app:srcCompat="@drawable/ic_baseline_chevron_right_24" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -44,7 +55,8 @@
                 app:endIconMode="custom"
                 app:layout_constraintBottom_toTopOf="@id/image_pod"
                 app:layout_constraintStart_toEndOf="parent"
-                app:layout_constraintVertical_chainStyle="packed">
+                app:layout_constraintVertical_chainStyle="packed"
+                android:visibility="invisible">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_edit_text"
@@ -55,25 +67,34 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/day_before_yesterday_chip"
+                android:id="@+id/today_chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/the_day_before_yesterday"
-                app:layout_constraintTop_toBottomOf="@id/input_layout"/>
+                android:text="@string/today"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/input_layout"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/yesterday_chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/yesterday"
-                app:layout_constraintTop_toBottomOf="@id/input_layout"/>
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@id/today_chip"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/today_chip"
+                android:id="@+id/day_before_yesterday_chip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/today"
-                app:layout_constraintTop_toBottomOf="@id/input_layout"/>
+                android:textAlignment="center"
+                android:text="@string/the_day_before_yesterday"
+                app:layout_constraintTop_toBottomOf="@id/yesterday_chip"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+
 
             <androidx.constraintlayout.widget.Barrier
                 android:id="@+id/chip_barrier"

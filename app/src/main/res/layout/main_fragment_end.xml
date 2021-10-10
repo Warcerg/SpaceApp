@@ -26,11 +26,23 @@
                 android:paddingEnd="@dimen/wiki_button_padding_end"
                 android:paddingBottom="@dimen/wiki_button_padding_bottom"
                 app:layout_constraintBottom_toBottomOf="@id/input_layout"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/input_layout"
                 app:srcCompat="@drawable/ic_wiki"
-
+                android:visibility="invisible"
                 />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/shrink_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/wiki_button_padding_end"
+                android:paddingBottom="@dimen/wiki_button_padding_bottom"
+                app:layout_constraintBottom_toBottomOf="@id/input_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/input_layout"
+                app:srcCompat="@drawable/ic_baseline_chevron_right_24"
+                android:visibility="visible"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/input_layout"
@@ -45,9 +57,10 @@
                 app:endIconMode="custom"
                 app:layout_constraintBottom_toTopOf="@id/image_pod"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/wiki_button"
+                app:layout_constraintStart_toEndOf="@id/shrink_button"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed">
+                app:layout_constraintVertical_chainStyle="packed"
+                android:visibility="visible">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_edit_text"
