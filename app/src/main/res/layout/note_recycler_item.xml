@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+
+        android:id="@+id/removeNoteImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_clear_24"
+        android:tint="?attr/themeColorOnBackground"/>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+
+        android:id="@+id/marsImageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_mars_large" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/earthImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_earth" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/noteHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heading"
+        android:layout_marginTop="5dp"
+        android:paddingStart="10dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/bottomView"
+        app:layout_constraintStart_toEndOf="@+id/marsImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/headingBarrier"/>
+
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/headingBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="moveItemDown,moveItemUp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/noteBodyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:text="Note text"
+        android:textColor="?attr/themeColorPrimaryVariant"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomView"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moveItemUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintEnd_toStartOf="@id/dragHandler"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/arrow_up_float" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moveItemDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/moveItemUp"
+        app:layout_constraintEnd_toStartOf="@id/dragHandler"
+        app:layout_constraintBottom_toBottomOf="@id/bottomView"
+        app:srcCompat="@android:drawable/arrow_down_float" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dragHandler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/bottomView"
+        app:srcCompat="@drawable/ic_baseline_drag_indicator_24" />
+
+    <View
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="1px"
+        android:background="#000"
+        app:layout_constraintTop_toBottomOf="@id/earthImageView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

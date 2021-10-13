@@ -8,6 +8,7 @@ import com.example.spaceapp.R
 import com.example.spaceapp.framework.ui.earth.EarthFragment
 import com.example.spaceapp.framework.ui.main.MainFragment
 import com.example.spaceapp.framework.ui.mars.MarsFragment
+import com.example.spaceapp.framework.ui.notes.NotesFragment
 import com.example.spaceapp.framework.ui.settings.SettingsFragment
 import com.example.spaceapp.model.entities.AppThemes
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -46,6 +47,10 @@ class MainActivity : AppCompatActivity() {
                     openFragment(MarsFragment.newInstance())
                     true
                 }
+                R.id.bottom_view_notes -> {
+                    openFragment(NotesFragment.newInstance())
+                    true
+                }
                 R.id.bottom_view_settings -> {
                     openFragment(SettingsFragment.newInstance())
                     true
@@ -63,6 +68,9 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 R.id.bottom_view_mars -> {
+
+                }
+                R.id.bottom_view_notes -> {
 
                 }
                 R.id.bottom_view_settings -> {
