@@ -1,12 +1,8 @@
 package com.example.spaceapp.framework.ui.main
 
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,12 +14,9 @@ import androidx.transition.ChangeImageTransform
 import androidx.transition.TransitionManager
 import androidx.transition.TransitionSet
 import coil.api.load
-import com.example.spaceapp.R
+import com.example.spaceapp.*
 import com.example.spaceapp.databinding.MainFragmentStartBinding
-import com.example.spaceapp.getDayBeforeYesterdayDateTime
-import com.example.spaceapp.getYesterdayDateTime
 import com.example.spaceapp.model.AppState
-import com.example.spaceapp.toString
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -62,6 +55,7 @@ class MainFragment: Fragment() {
         }
         initChips()
     }
+
 
     private fun initDate() {
         yesterdayDate = getYesterdayDateTime().toString("yyyy-MM-dd")
@@ -111,10 +105,7 @@ class MainFragment: Fragment() {
             }
             is AppState.SuccessPOD -> {
                 imagePod.load(appState.pictureOfTheDayData.url)
-                val spannable = SpannableString(appState.pictureOfTheDayData.explanation)
-                spannable.setSpan(ForegroundColorSpan(Color.RED),0,spannable.indexOf(" "),
-                    Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-              /*  spannable.setSpan()*/
+                val spannable = spanHighlightFirstWord(appState.pictureOfTheDayData.explanation, ' ')
                 podDescription.text = spannable
             }
             is AppState.Error -> {

@@ -1,8 +1,14 @@
 package com.example.spaceapp.framework.ui.mars
 
+import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,6 +24,7 @@ import com.example.spaceapp.R
 import com.example.spaceapp.databinding.MarsFragmentBinding
 import com.example.spaceapp.getCurrentDateTime
 import com.example.spaceapp.model.AppState
+import com.example.spaceapp.spanHighlightFirstWord
 import com.example.spaceapp.toString
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -46,6 +53,7 @@ class MarsFragment: Fragment() {
         initDate()
         initHeaderElevation()
         initImageViewExpander()
+        initMarsDescriptionSpan()
         viewModel.getLiveData().observe(viewLifecycleOwner, { loadData(it)})
         viewModel.getMarsPhotoData(dateString)
         activity?.let {
@@ -56,6 +64,13 @@ class MarsFragment: Fragment() {
             }
         }
 
+    }
+
+    private fun initMarsDescriptionSpan() {
+        with(binding){
+            val spannable = spanHighlightFirstWord(getString(R.string.mars_wiki_text), ' ')
+            marsWikiText.text = spannable
+        }
     }
 
     private fun initImageViewExpander() {
@@ -98,7 +113,17 @@ class MarsFragment: Fragment() {
                     day
                 } else appState.marsPhotos.size - 1
                 imageMars.load(appState.marsPhotos[photoId].url)
-                marsTextView.text = getString(R.string.mars_photo_date).plus(" ").plus(appState.marsPhotos[photoId].earthDate)
+                val spannable = SpannableString(getString(R.string.mars_photo_date).plus(" ").plus(appState.marsPhotos[photoId].earthDate))
+                spannable.setSpan(
+                    ForegroundColorSpan(Color.RED),0,spannable.indexOf(":")+1,
+                    Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+                spannable.setSpan(
+                    RelativeSizeSpan(1.5f),0,spannable.indexOf(":")+1,
+                    Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+                spannable.setSpan(
+                    UnderlineSpan(),0,spannable.indexOf(":")+1,
+                    Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+                marsTextView.text = spannable
             }
             is AppState.Error -> {
                 Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()

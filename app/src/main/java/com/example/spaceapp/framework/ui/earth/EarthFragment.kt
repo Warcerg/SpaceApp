@@ -16,6 +16,7 @@ import com.example.spaceapp.R
 import com.example.spaceapp.databinding.EarthFragmentBinding
 import com.example.spaceapp.getYesterdayDateTime
 import com.example.spaceapp.model.AppState
+import com.example.spaceapp.spanHighlightFirstWord
 import com.example.spaceapp.toString
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -76,7 +77,9 @@ class EarthFragment: Fragment() {
             }
             is AppState.SuccessEarthPhoto -> {
                 imageEarth.load(appState.earthPhoto.imageURL)
-                earthPhotoDescription.text = appState.earthPhoto.caption
+
+                val spannable = spanHighlightFirstWord(appState.earthPhoto.caption, ' ')
+                earthPhotoDescription.text = spannable
             }
             is AppState.Error -> {
                 Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()
