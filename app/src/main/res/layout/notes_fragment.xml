@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+   >
 
     <FrameLayout
         android:id="@+id/header"
@@ -24,7 +26,7 @@
         android:layout_gravity="center_vertical"
         android:layout_marginStart="10dp"
         android:textColor="?attr/colorPrimary"
-        android:text="Notes"
+        android:text="@string/notes"
         android:textSize="@dimen/main_heading_text_size"
         android:textStyle="bold"
         android:elevation="10dp"/>
@@ -34,19 +36,21 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="52dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header"
         tools:listitem="@layout/note_recycler_item"
+        android:background="?attr/themeColorAndroidStatusBarColor"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/notesFragmentFAB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorPrimary"
+        android:backgroundTint="?attr/themeColorPrimary"
         android:src="@drawable/ic_fab"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

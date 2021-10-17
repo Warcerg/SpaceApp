@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.MotionEventCompat
+import androidx.core.view.MotionEventCompat.getActionMasked
 import androidx.recyclerview.widget.RecyclerView
+import com.example.spaceapp.R
 import com.example.spaceapp.databinding.NoteRecyclerItemBinding
 import com.example.spaceapp.framework.ui.notes.ItemTouchHelperViewHolder
 import com.example.spaceapp.framework.util.OnListItemClickListener
@@ -17,7 +18,7 @@ class NotesRecyclerAdapter(
     private var onListItemClickListener: OnListItemClickListener,
     private var dragListener: OnStartDragListener,
     private var notes: MutableList<Pair<Note, Boolean>>
-): RecyclerView.Adapter<NotesRecyclerAdapter.NoteViewHolder>(), ItemTouchHelperAdapter  {
+) : RecyclerView.Adapter<NotesRecyclerAdapter.NoteViewHolder>(), ItemTouchHelperAdapter {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -25,8 +26,9 @@ class NotesRecyclerAdapter(
             NoteRecyclerItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
-                false)
-       return NoteViewHolder(binding.root)
+                false
+            )
+        return NoteViewHolder(binding.root)
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
@@ -34,7 +36,7 @@ class NotesRecyclerAdapter(
     }
 
     override fun getItemCount(): Int {
-       return notes.size
+        return notes.size
     }
 
 
@@ -61,9 +63,11 @@ class NotesRecyclerAdapter(
         fun onStartDrag(viewHolder: RecyclerView.ViewHolder)
     }
 
-    inner class NoteViewHolder(view: View):
+    inner class NoteViewHolder(view: View) :
         RecyclerView.ViewHolder(view),
         ItemTouchHelperViewHolder {
+
+        private var isEditable = false
 
         @SuppressLint("ClickableViewAccessibility")
         fun bind(pair: Pair<Note, Boolean>) {
@@ -72,18 +76,44 @@ class NotesRecyclerAdapter(
                     onListItemClickListener.onItemClick(pair.first)
                 }
                 noteHeading.text = pair.first.Heading
-                noteBodyTextView.text = pair.first.Text
-                removeNoteImageView.setOnClickListener {removeItem() }
+                noteHeadingEditText.setText(pair.first.Heading)
+                noteBodyTextView.setText(pair.first.Text)
+                removeNoteImageView.setOnClickListener { removeItem() }
                 moveItemUp.setOnClickListener { moveUp() }
                 moveItemDown.setOnClickListener { moveDown() }
                 noteHeading.setOnClickListener { toggleText() }
+                editItem.setOnClickListener { editNote(pair) }
                 noteBodyTextView.visibility = if (pair.second) View.VISIBLE else View.GONE
+                noteHeadingEditText.visibility = if (pair.second) View.VISIBLE else View.GONE
+                editItem.visibility = if (pair.second) View.VISIBLE else View.GONE
                 dragHandler.setOnTouchListener { v, event ->
-                    if (MotionEventCompat.getActionMasked(event) == MotionEvent.ACTION_DOWN) {
+                    if (event.actionMasked == MotionEvent.ACTION_DOWN) {
                         dragListener.onStartDrag(this@NoteViewHolder)
                     }
                     false
                 }
+            }
+        }
+
+        private fun NoteRecyclerItemBinding.editNote(
+            pair: Pair<Note, Boolean>
+        ) {
+            isEditable = !isEditable
+            if (isEditable) {
+                noteBodyTextView.isFocusable = true
+                noteBodyTextView.isFocusableInTouchMode = true
+                noteHeadingEditText.isFocusable = true
+                noteHeadingEditText.isFocusableInTouchMode = true
+                editItem.setImageResource(R.drawable.ic_baseline_save_24)
+            } else {
+                noteBodyTextView.isFocusable = false
+                noteBodyTextView.isFocusableInTouchMode = false
+                noteHeadingEditText.isFocusable = false
+                noteHeadingEditText.isFocusableInTouchMode = false
+                pair.first.Heading = noteHeadingEditText.text.toString()
+                noteHeading.text = pair.first.Heading
+                pair.first.Text = noteBodyTextView.text.toString()
+                editItem.setImageResource(R.drawable.ic_baseline_edit_24)
             }
         }
 

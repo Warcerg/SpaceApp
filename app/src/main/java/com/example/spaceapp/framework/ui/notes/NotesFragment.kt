@@ -1,5 +1,6 @@
 package com.example.spaceapp.framework.ui.notes
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -40,6 +41,8 @@ class NotesFragment : Fragment() {
         recyclerView.adapter = adapter
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.getNotesData()
+        initHeaderElevation()
+
 
 
     }
@@ -75,6 +78,15 @@ class NotesFragment : Fragment() {
         }
     }
 
+    private fun initHeaderElevation() {
+        with(binding){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                recyclerView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+                    header.isSelected = recyclerView.canScrollVertically(-1)
+                }
+            }
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
