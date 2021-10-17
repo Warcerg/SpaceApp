@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/theme_horizontal_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.22" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/theme_start_vertical_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/theme_end_vertical_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85" />
+
+        <TextView
+            android:id="@+id/settings_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/main_heading_padding_start"
+            android:paddingTop="@dimen/main_heading_padding_top"
+            android:paddingBottom="@dimen/main_heading_padding_bottom"
+            android:text="@string/settings"
+            android:textSize="@dimen/main_heading_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/theme_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/theme__heading_padding_start"
+            android:text="@string/theme"
+            android:textSize="@dimen/theme_heading_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/settings_heading" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/heading_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="settings_heading, theme_heading"/>
+
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipThemeEuropa"
+            android:layout_width="@dimen/settings_chip_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_chip_margin"
+            android:layout_marginEnd="@dimen/settings_chip_margin"
+            android:layout_weight="1"
+            android:text="@string/europa"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@id/theme_horizontal_guideline"
+            app:layout_constraintStart_toStartOf="@id/theme_start_vertical_guideline"
+            app:layout_constraintEnd_toEndOf="@id/theme_start_vertical_guideline"
+            app:layout_constraintTop_toTopOf="@id/heading_barrier"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipThemeMars"
+            android:layout_width="@dimen/settings_chip_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_chip_margin"
+            android:layout_marginEnd="@dimen/settings_chip_margin"
+            android:layout_weight="1"
+            android:text="@string/mars"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@id/theme_horizontal_guideline"
+            app:layout_constraintEnd_toStartOf="@id/chipThemeUranus"
+            app:layout_constraintStart_toEndOf="@id/chipThemeEuropa"
+            app:layout_constraintTop_toTopOf="@id/heading_barrier" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipThemeUranus"
+            android:layout_width="@dimen/settings_chip_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_chip_margin"
+            android:layout_marginEnd="@dimen/settings_chip_margin"
+            android:layout_weight="1"
+            android:text="@string/uranus"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@id/theme_horizontal_guideline"
+            app:layout_constraintEnd_toEndOf="@id/theme_end_vertical_guideline"
+            app:layout_constraintTop_toTopOf="@id/heading_barrier"
+            app:layout_constraintStart_toStartOf="@id/theme_end_vertical_guideline"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/chip_theme_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="chipThemeMars, chipThemeEuropa,chipThemeUranus" />
+
+        <TextView
+            android:id="@+id/textThemeExample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingEnd="@dimen/theme_example_textview_padding_end"
+            android:text="@string/theme_example"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/theme_example_textview_text_size"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chip_theme_barrier" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/chip_example_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="textThemeExample" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/theme_example_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="theme_example_button_group,theme_example_other_fields_group,card" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/theme_example_button_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="outlinedButton, raisedButton, textButton, unelevatedButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/outlinedButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_button_margin_start"
+            android:layout_marginTop="@dimen/settings_button_margin_top"
+            android:text="@string/outlined_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chip_example_barrier" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/buttons_example_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="outlinedButton, unelevatedButton, outlinedBoxTextField" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/raisedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_button_margin_start"
+            android:layout_marginTop="@dimen/settings_button_margin_top"
+            android:text="@string/raised_button"
+            app:layout_constraintStart_toEndOf="@id/buttons_example_barrier"
+            app:layout_constraintTop_toBottomOf="@id/chip_example_barrier" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/unelevatedButton"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_button_margin_start"
+            android:layout_marginTop="@dimen/settings_button_margin_top"
+            android:text="@string/unelevated_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/outlinedButton" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/textButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_button_margin_start"
+            android:layout_marginTop="@dimen/settings_button_margin_top"
+            android:text="@string/text_button"
+            app:layout_constraintStart_toEndOf="@id/buttons_example_barrier"
+            app:layout_constraintTop_toBottomOf="@id/raisedButton" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/theme_example_other_fields_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="filledBoxTextField, outlinedBoxTextField, tabs, radioButton, switchButton" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedBoxTextField"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_text_input_layout_margin_start"
+            android:layout_marginTop="@dimen/settings_text_input_layout_margin_top"
+            android:hint="@string/outlined_box_text_field_example"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unelevatedButton">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/some_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/filledBoxTextField"
+            android:layout_width="@dimen/settings_text_imput_layout_width"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_text_input_layout_margin_start"
+            android:layout_marginTop="@dimen/settings_text_input_layout_margin_top"
+            android:hint="@string/filled_box_text_field"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/buttons_example_barrier"
+            app:layout_constraintTop_toBottomOf="@id/textButton">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/some_other_text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/outlinedBoxTextField">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_1" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_2" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_3" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab_4" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_switch_material_margin_start"
+            android:layout_marginTop="@dimen/settings_switch_material_margin_top"
+            android:text="@string/switchButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tabs" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/settings_radio_button_margin_start"
+            android:layout_marginTop="@dimen/settings_radio_button_margin_top"
+            android:text="@string/radio_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/switchButton"
+            app:layout_constraintTop_toBottomOf="@id/tabs" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/settings_card_view_height"
+            android:layout_marginStart="@dimen/settings_card_view_margin"
+            android:layout_marginTop="@dimen/settings_card_view_margin"
+            android:layout_marginEnd="@dimen/settings_card_view_margin"
+            android:paddingBottom="@dimen/settings_card_view_padding_bottom"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radioButton">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/cardview" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/settings_divider_height"
+            android:background="?android:attr/listDivider"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

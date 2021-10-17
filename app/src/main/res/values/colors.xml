@@ -7,4 +7,55 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="europa_color_primary">#5082b4</color>
+    <color name="europa_color_primary_variant">#165685</color>
+    <color name="europa_color_on_primary">#FFFFFFFF</color>
+    <color name="europa_color_secondary">#9e8f83</color>
+    <color name="europa_color_secondary_variant">#9e8f83</color>
+    <color name="europa_color_on_secondary">#FFFFFFFF</color>
+    <color name="europa_color_status_bar">#82b1e6</color>
+    <color name="europa_color_error">#682b19</color>
+    <color name="europa_color_on_error">#CC856F</color>
+    <color name="europa_color_surface">#fff2e4</color>
+    <color name="europa_color_on_surface">#78100B</color>
+    <color name="europa_color_background">#ffffff</color>
+    <color name="europa_color_on_background">#682b19</color>
+    <color name="europa_primary_text_color">#78100B</color>
+    <color name="europa_secondary_text_color">#78100B</color>
+
+    <color name="mars_color_primary">#f38b36</color>
+    <color name="mars_color_primary_variant">#bb5d00</color>
+    <color name="mars_color_on_primary">#000000</color>
+    <color name="mars_color_secondary">#fdc98d</color>
+    <color name="mars_color_secondary_variant">#c8985f</color>
+    <color name="mars_color_on_secondary">#000000</color>
+    <color name="mars_color_status_bar">#ffbc65</color>
+    <color name="mars_color_error">#94390C</color>
+    <color name="mars_color_on_error">#bb5d00</color>
+    <color name="mars_color_surface">#ffbc65</color>
+    <color name="mars_color_on_surface">#000000</color>
+    <color name="mars_color_background">#fffcbe</color>
+    <color name="mars_color_on_background">#000000</color>
+    <color name="mars_primary_text_color">#000000</color>
+    <color name="mars_secondary_text_color">#000000</color>
+
+    <color name="uranus_color_primary">#3443a9</color>
+    <color name="uranus_color_primary_variant">#001d79</color>
+    <color name="uranus_color_on_primary">#ffffff</color>
+    <color name="uranus_color_secondary">#6dc4f9</color>
+    <color name="uranus_color_secondary_variant">#3094c6</color>
+    <color name="uranus_color_on_secondary">#000000</color>
+    <color name="uranus_color_status_bar">#31378E</color>
+    <color name="uranus_color_error">#000000</color>
+    <color name="uranus_color_on_error">#3443A9</color>
+    <color name="uranus_color_surface">#a3f7ff</color>
+    <color name="uranus_color_on_surface">#000000</color>
+    <color name="uranus_color_background">#6b6edb</color>
+    <color name="uranus_color_on_background">#000000</color>
+    <color name="uranus_primary_text_color">#000000</color>
+    <color name="uranus_secondary_text_color">#000000</color>
+    <color name="settings_example_color">#DDDDDD</color>
+
+
 </resources>
