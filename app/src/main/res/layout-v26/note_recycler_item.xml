@@ -9,7 +9,8 @@
     android:layout_marginTop="5dp"
     android:layout_marginEnd="5dp"
     android:layout_marginBottom="5dp"
-    android:background="@color/white">
+    android:background="@color/white"
+  >
 
     <androidx.appcompat.widget.AppCompatImageView
 
@@ -105,6 +106,7 @@
         android:layout_margin="10dp"
         android:tint="?attr/colorPrimary"
         android:visibility="gone"
+        android:tooltipText="@string/edit_item_tooltip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bottomView"
         app:srcCompat="@drawable/ic_baseline_edit_24"

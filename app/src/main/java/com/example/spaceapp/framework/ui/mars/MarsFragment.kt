@@ -1,5 +1,6 @@
 package com.example.spaceapp.framework.ui.mars
 
+import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,7 +19,6 @@ import com.example.spaceapp.databinding.MarsFragmentBinding
 import com.example.spaceapp.getCurrentDateTime
 import com.example.spaceapp.model.AppState
 import com.example.spaceapp.toString
-import org.koin.android.ext.android.bind
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MarsFragment: Fragment() {
@@ -48,6 +48,13 @@ class MarsFragment: Fragment() {
         initImageViewExpander()
         viewModel.getLiveData().observe(viewLifecycleOwner, { loadData(it)})
         viewModel.getMarsPhotoData(dateString)
+        activity?.let {
+            with(binding){
+                marsHeading.typeface = Typeface.createFromAsset(it.assets, "fonts/RedWorld.ttf")
+                marsTextView.typeface = Typeface.createFromAsset(it.assets, "fonts/RedWorld.ttf")
+                marsWikiText.typeface = Typeface.createFromAsset(it.assets, "fonts/RedWorld.ttf")
+            }
+        }
 
     }
 

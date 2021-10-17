@@ -1,25 +1,30 @@
 package com.example.spaceapp.framework.ui.main
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import coil.api.load
 import com.example.spaceapp.R
-import com.example.spaceapp.model.AppState
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import android.text.method.ScrollingMovementMethod
-import android.view.Gravity
-import android.widget.ImageView
-import androidx.transition.*
 import com.example.spaceapp.databinding.MainFragmentStartBinding
 import com.example.spaceapp.getDayBeforeYesterdayDateTime
 import com.example.spaceapp.getYesterdayDateTime
+import com.example.spaceapp.model.AppState
 import com.example.spaceapp.toString
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainFragment: Fragment() {
@@ -106,7 +111,11 @@ class MainFragment: Fragment() {
             }
             is AppState.SuccessPOD -> {
                 imagePod.load(appState.pictureOfTheDayData.url)
-                podDescription.text = appState.pictureOfTheDayData.explanation
+                val spannable = SpannableString(appState.pictureOfTheDayData.explanation)
+                spannable.setSpan(ForegroundColorSpan(Color.RED),0,spannable.indexOf(" "),
+                    Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
+              /*  spannable.setSpan()*/
+                podDescription.text = spannable
             }
             is AppState.Error -> {
                 Toast.makeText(context, getString(R.string.error), Toast.LENGTH_SHORT).show()

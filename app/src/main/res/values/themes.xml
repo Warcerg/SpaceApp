@@ -17,6 +17,9 @@
         <item name="android:textColorPrimary">?attr/themeColorTextPrimary</item>
         <item name="android:textColorSecondary">?attr/themeColorTextSecondary</item>
         <item name="materialCardViewStyle">@style/AppCard</item>
+        <item name="fontFamily">@font/baumans</item>
+        <item name="android:hyphenationFrequency" tools:targetApi="m">normal</item>
+
 
     </style>
 

@@ -34,9 +34,10 @@
         android:id="@+id/earth_photo_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/image_earth"
+        android:fontFamily="@font/baumans"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/image_earth" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

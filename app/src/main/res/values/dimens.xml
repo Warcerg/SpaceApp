@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="main_heading_text_size">34sp</dimen>
+    <dimen name="main_heading_text_size">38sp</dimen>
     <dimen name="main_heading_padding_top">15dp</dimen>
     <dimen name="main_heading_padding_bottom">25dp</dimen>
     <dimen name="main_heading_padding_start">5dp</dimen>
