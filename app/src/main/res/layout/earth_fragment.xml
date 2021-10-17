@@ -9,14 +9,15 @@
         android:id="@+id/earth_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Earth Photo of the Day"
-        android:textStyle="bold"
-        android:textSize="@dimen/main_heading_text_size"
+        android:fontFamily="@font/roboto"
         android:paddingTop="@dimen/main_heading_padding_top"
         android:paddingBottom="@dimen/main_heading_padding_bottom"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="Earth Photo of the Day"
+        android:textSize="@dimen/main_heading_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.spaceapp.framework.util.EquilateralImageView
         android:id="@+id/image_earth"
@@ -34,9 +35,10 @@
         android:id="@+id/earth_photo_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/image_earth"
+        android:fontFamily="@font/roboto_thin"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/image_earth" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

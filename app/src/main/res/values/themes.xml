@@ -17,6 +17,7 @@
         <item name="android:textColorPrimary">?attr/themeColorTextPrimary</item>
         <item name="android:textColorSecondary">?attr/themeColorTextSecondary</item>
         <item name="materialCardViewStyle">@style/AppCard</item>
+        <item name="fontFamily">@font/roboto</item>
 
     </style>
 

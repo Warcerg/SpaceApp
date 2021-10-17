@@ -96,8 +96,6 @@
                 app:layout_constraintEnd_toEndOf="parent"/>
 
 
-
-
             <androidx.constraintlayout.widget.Barrier
                 android:id="@+id/chip_barrier"
                 android:layout_width="match_parent"
@@ -122,14 +120,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/pod_description_margin"
-                android:paddingEnd="@dimen/pod_description_margin"
                 android:paddingTop="@dimen/pod_description_margin"
+                android:paddingEnd="@dimen/pod_description_margin"
                 android:text="@string/pod_description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_pod"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/image_pod" />
 
         </androidx.constraintlayout.motion.widget.MotionLayout>
 
