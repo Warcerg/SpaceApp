@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_heading_text_size">34sp</dimen>
+    <dimen name="main_heading_padding_top">15dp</dimen>
+    <dimen name="main_heading_padding_bottom">25dp</dimen>
+    <dimen name="main_heading_padding_start">5dp</dimen>
+    <dimen name="theme__heading_padding_start">15dp</dimen>
+    <dimen name="theme_heading_text_size">24sp</dimen>
+    <dimen name="settings_layout_margin_top">5dp</dimen>
+    <dimen name="settings_layout_margin_bottom">5dp</dimen>
+    <dimen name="settings_chip_margin">5dp</dimen>
+    <dimen name="settings_layout_text_view_margin_top">15dp</dimen>
+    <dimen name="settings_layout_text_view_margin_bottom">15dp</dimen>
+    <dimen name="theme_example_textview_padding_end">35dp</dimen>
+    <dimen name="theme_example_textview_text_size">18sp</dimen>
+    <dimen name="settings_constraint_layout_margin_start">5dp</dimen>
+    <dimen name="settings_constraint_layout_margin_end">5dp</dimen>
+    <dimen name="settings_constraint_layout_margin_bottom">5dp</dimen>
+    <dimen name="settings_button_margin_start">16dp</dimen>
+    <dimen name="settings_button_margin_top">16dp</dimen>
+    <dimen name="settings_text_input_layout_margin_start">15dp</dimen>
+    <dimen name="settings_text_input_layout_margin_top">15dp</dimen>
+    <dimen name="settings_text_imput_layout_width">180dp</dimen>
+    <dimen name="settings_divider_height">10dp</dimen>
+    <dimen name="settings_switch_material_margin_top">16dp</dimen>
+    <dimen name="settings_switch_material_margin_start">16dp</dimen>
+    <dimen name="settings_radio_button_margin_start">16dp</dimen>
+    <dimen name="settings_radio_button_margin_top">16dp</dimen>
+    <dimen name="settings_card_view_height">120dp</dimen>
+    <dimen name="settings_card_view_margin">16dp</dimen>
+    <dimen name="settings_card_view_padding_bottom">25dp</dimen>
+    <dimen name="wiki_button_padding_end">8dp</dimen>
+    <dimen name="wiki_button_padding_bottom">16dp</dimen>
+    <dimen name="pod_description_margin">15dp</dimen>
+    <dimen name="settings_chip_width">80dp</dimen>
+</resources>
