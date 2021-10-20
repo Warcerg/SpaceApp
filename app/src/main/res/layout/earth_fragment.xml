@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/earth_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Earth Photo of the Day"
+        android:textStyle="bold"
+        android:textSize="@dimen/main_heading_text_size"
+        android:paddingTop="@dimen/main_heading_padding_top"
+        android:paddingBottom="@dimen/main_heading_padding_bottom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.example.spaceapp.framework.util.EquilateralImageView
+        android:id="@+id/image_earth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/earth_photo_of_the_day"
+        app:layout_constraintTop_toBottomOf="@id/earth_heading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/earth_photo_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/baumans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_earth" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
