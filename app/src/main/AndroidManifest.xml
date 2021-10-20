@@ -14,17 +14,20 @@
         android:theme="@style/Theme.SpaceApp.Europa">
         <activity
             android:name=".framework.ui.MainActivity"
-            android:exported="true">
-        </activity>
-        <activity
-            android:name=".framework.ui.splashscreen.SplashActivity"
-            android:noHistory="true"
+            android:theme="@style/Theme.SpaceApp.Europa.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".framework.ui.splashscreen.SplashActivity"
+            android:noHistory="true"
+            android:exported="true">
+
         </activity>
 
         <meta-data

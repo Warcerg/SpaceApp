@@ -17,4 +17,5 @@ val appModule = module {
     viewModel { MarsViewModel(get()) }
     viewModel { EarthViewModel(get()) }
     viewModel { NotesViewModel(get()) }
+
 }

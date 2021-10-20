@@ -19,8 +19,11 @@
         <item name="materialCardViewStyle">@style/AppCard</item>
         <item name="fontFamily">@font/baumans</item>
         <item name="android:hyphenationFrequency" tools:targetApi="m">normal</item>
-
-
+        
+    </style>
+    
+    <style name="Theme.SpaceApp.Europa.Splash">
+        <item name="android:windowBackground">@drawable/splash_background_drawable_theme</item>
     </style>
 
     <style name="AppCard" parent="Widget.MaterialComponents.CardView">
